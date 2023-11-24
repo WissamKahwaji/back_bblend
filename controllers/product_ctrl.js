@@ -16,6 +16,20 @@ export const getProductData = async (req, res) => {
     }
 };
 
+
+export const getProductById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const productData = await Product.findById(id);
+
+
+        return res.status(200).json(productData);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json("Something went wrong");
+    }
+};
+
 export const addProductData = async (req, res) => {
     try {
 
