@@ -21,7 +21,7 @@ export const getWhyBbData = async (req, res) => {
 export const addWhyBbData = async (req, res) => {
     try {
         const imgPath = req.files && req.files['img'] ? req.files['img'][0].path : null;
-        const urlImg = imgPath ? 'http://localhost:5000/' + imgPath.replace(/\\/g, '/') : null;
+        const urlImg = imgPath ? 'https://backbblend.siidevelopment.com/' + imgPath.replace(/\\/g, '/') : null;
 
         const newWhyBbData = new whyBbModel({
             img: urlImg

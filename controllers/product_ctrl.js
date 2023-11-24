@@ -36,16 +36,16 @@ export const addProductData = async (req, res) => {
         } = req.body;
 
         const imgPath = req.files && req.files['img'] ? req.files['img'][0].path : null;
-        const urlImg = imgPath ? 'http://localhost:5000/' + imgPath.replace(/\\/g, '/') : null;
+        const urlImg = imgPath ? 'https://backbblend.siidevelopment.com/' + imgPath.replace(/\\/g, '/') : null;
 
         const firstimgPath = req.files && req.files['first'] ? req.files['first'][0].path : null;
-        const firsturlImg = firstimgPath ? 'http://localhost:5000/' + firstimgPath.replace(/\\/g, '/') : null;
+        const firsturlImg = firstimgPath ? 'https://backbblend.siidevelopment.com/' + firstimgPath.replace(/\\/g, '/') : null;
 
         const secondimgPath = req.files && req.files['second'] ? req.files['second'][0].path : null;
-        const secondurlImg = secondimgPath ? 'http://localhost:5000/' + secondimgPath.replace(/\\/g, '/') : null;
+        const secondurlImg = secondimgPath ? 'https://backbblend.siidevelopment.com/' + secondimgPath.replace(/\\/g, '/') : null;
 
         const thirdimgPath = req.files && req.files['third'] ? req.files['third'][0].path : null;
-        const thirdurlImg = thirdimgPath ? 'http://localhost:5000/' + thirdimgPath.replace(/\\/g, '/') : null;
+        const thirdurlImg = thirdimgPath ? 'https://backbblend.siidevelopment.com/' + thirdimgPath.replace(/\\/g, '/') : null;
 
         const newProduct = new Product({
             img: urlImg,

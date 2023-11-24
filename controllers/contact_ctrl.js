@@ -26,7 +26,7 @@ export const addContactData = async (req, res) => {
 
         const { email, callUs, whatsapp, insta } = req.body;
         const imgPath = req.files && req.files['img'] ? req.files['img'][0].path : null;
-        const urlImg = imgPath ? 'http://localhost:5000/' + imgPath.replace(/\\/g, '/') : null;
+        const urlImg = imgPath ? 'https://backbblend.siidevelopment.com/' + imgPath.replace(/\\/g, '/') : null;
 
         const newContactData = new contactUsModel({
             img: urlImg,

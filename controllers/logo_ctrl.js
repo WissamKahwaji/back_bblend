@@ -19,10 +19,10 @@ export const addLogoData = async (req, res) => {
 
         //   const { logoData, mainLogo } = req.body;
         const logoImgPath = req.files && req.files['logoImg'] ? req.files['logoImg'][0].path : null;
-        const logoUrlImg = logoImgPath ? 'http://localhost:5000/' + logoImgPath.replace(/\\/g, '/') : null;
+        const logoUrlImg = logoImgPath ? 'https://backbblend.siidevelopment.com/' + logoImgPath.replace(/\\/g, '/') : null;
 
         const mainLogoImgPath = req.files && req.files['mainImg'] ? req.files['mainImg'][0].path : null;
-        const mainLogUrlImg = mainLogoImgPath ? 'http://localhost:5000/' + mainLogoImgPath.replace(/\\/g, '/') : null;
+        const mainLogUrlImg = mainLogoImgPath ? 'https://backbblend.siidevelopment.com/' + mainLogoImgPath.replace(/\\/g, '/') : null;
 
 
         const newLogoData = new logoModel({

@@ -23,7 +23,7 @@ export const addMiddleData = async (req, res) => {
     try {
         const { title, description } = req.body;
         const imgPath = req.files && req.files['img'] ? req.files['img'][0].path : null;
-        const urlImg = imgPath ? 'http://localhost:5000/' + imgPath.replace(/\\/g, '/') : null;
+        const urlImg = imgPath ? 'https://backbblend.siidevelopment.com/' + imgPath.replace(/\\/g, '/') : null;
 
         const newMiddle = new middleSectionModel({
             img: urlImg,
