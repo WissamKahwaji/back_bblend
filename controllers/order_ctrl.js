@@ -2,7 +2,7 @@ import { orderModel } from "../models/order/order_model.js";
 
 export const getOrders = async (req, res) => {
   try {
-    const orders = await orderModel.find();
+    const orders = await orderModel.find().sort({ createdAt: -1 });
 
     return res.status(200).json(orders);
   } catch (error) {
@@ -74,7 +74,7 @@ export const getOrderById = async (req, res) => {
   try {
     const { userId, orderId } = req.params;
 
-    const order = await orderModel.findOne({ orderId });
+    const order = await orderModel.findById(orderId);
 
     if (!order) {
       return res.status(404).json("Order not found");
@@ -89,10 +89,10 @@ export const getOrderById = async (req, res) => {
 
 export const updateOrderStatus = async (req, res) => {
   try {
-    const { userIdentifier, orderIdInDB } = req.params.orderId;
+    const { id } = req.params;
     const { status } = req.body;
 
-    const order = await orderModel.findById(orderIdInDB);
+    const order = await orderModel.findById(id);
 
     if (!order) {
       return res.status(404).json("Order not found");

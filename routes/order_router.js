@@ -10,9 +10,9 @@ import {
 const router = express.Router();
 
 router.get("/", getOrders);
-router.get("/:userId/:orderId", getOrderById);
+router.get("/:orderId", getOrderById);
 router.get("/:userIdentifier", getUserOrders);
 router.post("/:userIdentifier", addOrder);
-router.put("/:userIdentifier/:orderIdInDB/orderStatus", updateOrderStatus);
+router.put("/:id/orderStatus", updateOrderStatus);
 
 export default router;
