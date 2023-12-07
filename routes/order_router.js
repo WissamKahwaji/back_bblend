@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get("/", getOrders);
 router.get("/:orderId", getOrderById);
-router.get("/:userIdentifier", getUserOrders);
+router.get("/user/:userIdentifier", getUserOrders);
 router.post("/:userIdentifier", addOrder);
 router.put("/:id/orderStatus", updateOrderStatus);
 
