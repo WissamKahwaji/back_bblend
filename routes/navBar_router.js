@@ -1,16 +1,10 @@
-import express from 'express';
-import { addNavBarData, getNavBarData } from '../controllers/navBar_ctrl.js';
-
-
-
-
-
+import express from "express";
+import { addNavBarData, getNavBarData } from "../controllers/navBar_ctrl.js";
+import auth from "../middlewares/auth.js";
 
 const router = express.Router();
 
-
-router.get('/', getNavBarData);
-router.post('/add', addNavBarData);
-
+router.get("/", getNavBarData);
+router.post("/add", auth, addNavBarData);
 
 export default router;

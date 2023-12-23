@@ -1,15 +1,13 @@
-import express from 'express';
-import { addCategoryThreeData, getCategoryThreeData } from '../controllers/category_three_ctrl.js';
-
-
-
+import express from "express";
+import {
+  addCategoryThreeData,
+  getCategoryThreeData,
+} from "../controllers/category_three_ctrl.js";
+import auth from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.get('/', getCategoryThreeData);
-router.post('/', addCategoryThreeData);
-
-
-
+router.get("/", getCategoryThreeData);
+router.post("/", auth, addCategoryThreeData);
 
 export default router;
