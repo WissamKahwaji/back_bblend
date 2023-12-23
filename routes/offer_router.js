@@ -12,8 +12,8 @@ const router = express.Router();
 
 router.get("/", getOfferData);
 router.get("/:id", getOfferByIdData);
-router.post("/add", auth, addOfferData);
-router.put("/:id", auth, editOfferData);
-router.delete("/:id", auth, deleteOffer);
+router.post("/bb-add", auth, addOfferData);
+router.put("/bb-edit/:id", auth, editOfferData);
+router.delete("/bb-delete/:id", auth, deleteOffer);
 
 export default router;
