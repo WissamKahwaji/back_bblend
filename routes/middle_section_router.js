@@ -8,6 +8,6 @@ import auth from "../middlewares/auth.js";
 const router = express.Router();
 
 router.get("/", getMiddleSection);
-router.post("/add", auth, addMiddleData);
+router.post("/bb-add", auth, addMiddleData);
 
 export default router;

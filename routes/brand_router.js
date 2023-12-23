@@ -5,6 +5,6 @@ import auth from "../middlewares/auth.js";
 const router = express.Router();
 
 router.get("/", getBrandData);
-router.post("/add", auth, addBrandData);
+router.post("/bb-add", auth, addBrandData);
 
 export default router;

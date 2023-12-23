@@ -5,5 +5,5 @@ import auth from "../middlewares/auth.js";
 const router = express.Router();
 
 router.get("/", getTipsData);
-router.post("/add", auth, addTipsData);
+router.post("/bb-add", auth, addTipsData);
 export default router;

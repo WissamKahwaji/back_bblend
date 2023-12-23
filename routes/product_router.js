@@ -16,6 +16,6 @@ router.get("/", getProductData);
 router.post("/add", auth, addProductData);
 router.get("/by-type", getProductsByType);
 router.get("/:id", getProductById);
-router.put("/:id", auth, editProductData);
-router.delete("/:id", auth, deleteProductData);
+router.put("/bb-edit/:id", auth, editProductData);
+router.delete("/bb-remove/:id", auth, deleteProductData);
 export default router;

@@ -9,7 +9,7 @@ import auth from "../middlewares/auth.js";
 const router = express.Router();
 
 router.get("/", getContactUsData);
-router.post("/add", auth, addContactData);
-router.put("/edit", auth, editContactData);
+router.post("/bb-add", auth, addContactData);
+router.put("/bb-edit", auth, editContactData);
 
 export default router;
