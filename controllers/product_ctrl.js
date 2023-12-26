@@ -131,7 +131,7 @@ export const editProductData = async (req, res) => {
       expAR,
       deepDetails,
     } = req.body;
-
+    const productToUpdate = await Product.findById(id);
     const imgPath =
       req.files && req.files["img"] ? req.files["img"][0].path : null;
     const firstimgPath =
@@ -147,15 +147,15 @@ export const editProductData = async (req, res) => {
     const firsturlImg = firstimgPath
       ? "https://backbblend.siidevelopment.com/" +
         firstimgPath.replace(/\\/g, "/")
-      : null;
+      : productToUpdate.imgs.first;
     const secondurlImg = secondimgPath
       ? "https://backbblend.siidevelopment.com/" +
         secondimgPath.replace(/\\/g, "/")
-      : null;
+      : productToUpdate.imgs.second;
     const thirdurlImg = thirdimgPath
       ? "https://backbblend.siidevelopment.com/" +
         thirdimgPath.replace(/\\/g, "/")
-      : null;
+      : productToUpdate.imgs.third;
 
     const updatedData = {
       title,
