@@ -171,13 +171,20 @@ export const editProductData = async (req, res) => {
       expAR,
       deepDetails,
       //   img,
-      imgs: {},
+      imgs: {
+        first: firsturlImg,
+        second: secondurlImg,
+        third: thirdurlImg,
+      },
     };
+    // if (firstimgPath || secondimgPath || thirdimgPath) {
+    //   updatedData.imgs = {};
+    // }
 
     if (imgPath) updatedData.img = urlImg;
-    if (firstimgPath) updatedData.imgs.first = firsturlImg;
-    if (secondimgPath) updatedData.imgs.second = secondurlImg;
-    if (thirdimgPath) updatedData.imgs.third = thirdurlImg;
+    // if (firstimgPath) updatedData.imgs.first = firsturlImg;
+    // if (secondimgPath) updatedData.imgs.second = secondurlImg;
+    // if (thirdimgPath) updatedData.imgs.third = thirdurlImg;
 
     const updatedProduct = await Product.findByIdAndUpdate(
       id,
